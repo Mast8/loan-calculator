@@ -9,7 +9,7 @@
 
 :root{
     --primary: #1d3c45;
-    --secondary: #f1f5f8;
+    --secondary: #247fc9;
     --primaryFont: 'Source Sans Pro', sans-serif;
     --secFont: 'Nunito', sans-serif;
 }
@@ -87,7 +87,7 @@ body{
     border-radius: 3px;
 }
 .input-control input:focus{
-    outline: none;
+    background-color: var(--secondary);
 }
 .input-control span{
     padding-right: 0.6rem;
@@ -100,9 +100,8 @@ body{
 }
 
 .btns input{
-    background-color: #06d6a0;
+    background-color: var(--primary);
     display: block;
-    border: none;
     margin: 1rem auto 0 auto;
     font-family: inherit;
     text-transform: uppercase;
@@ -110,15 +109,17 @@ body{
     color: #fff;
     padding: 0.7rem 0;
     width: 180px;
-    border-radius: 3px;
+    border-radius: 5px;
     outline: 0;
     cursor: pointer;
+    border: 2px solid;
+    font-weight: bold;
 }
 
 .btns input:hover{
-    color: #06d6a0;
+    color: var(--primary);;
+    
     background-color: #fff;
-    border: 2px solid;
 }
 
 .payment-info{
@@ -130,7 +131,7 @@ body{
 
 .payment-info div{
     padding: 1rem 0;
-    background: #06d6a0;
+    background: var(--primary);
     color: #fff;
     border-radius: 5px;
 }
