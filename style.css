@@ -9,7 +9,9 @@
 
 :root{
     --primary: #1d3c45;
+
     --secondary: #247fc9;
+    --third: #296d81;
     --primaryFont: 'Source Sans Pro', sans-serif;
     --secFont: 'Nunito', sans-serif;
 }
@@ -86,9 +88,12 @@ body{
     padding: 0.4rem 0.6rem;
     border-radius: 3px;
 }
+
 .input-control input:focus{
-    background-color: var(--secondary);
+    color: #fff;
+    background-color: var(--third);
 }
+
 .input-control span{
     padding-right: 0.6rem;
     font-weight: 300;
@@ -109,7 +114,7 @@ body{
     color: #fff;
     padding: 0.7rem 0;
     width: 180px;
-    border-radius: 5px;
+    border-radius: 50px;
     outline: 0;
     cursor: pointer;
     border: 2px solid;
