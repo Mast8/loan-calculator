@@ -63,7 +63,7 @@ body{
 
 .input-name span{
     
-    background-color: #ef476f;
+    background-color: var(--third);
     display: block;
     width: 30px;
     height: 30px;
@@ -172,6 +172,6 @@ body{
         margin-bottom: 0.6rem;
     }
     .input-control span{
-        display: block;
+        
     }
 }
