@@ -25,6 +25,7 @@ function showPaymentInfo(){
     //paymentInfoList[3].innerHTML = `$${parseFloat(monthlyPayment).toLocaleString()}`;
     paymentInfoList[3].innerHTML = `$${parseFloat(yearPayment).toLocaleString()}`;
 
+
 }
 
 function calcMonthlyPayment(amount, i, months){
@@ -35,7 +36,11 @@ function calcMonthlyPayment(amount, i, months){
 
 function calcYearPayment(amount, i, year){
     interest = (i/100) ;
-    let monthlyPayment = (amount * interest * year);
+    //I=P×rn
+    //add interest
+    //pmt=P×(r/n)×(1+r/n)n×t(1+r/n)n×t−1
+
+    let monthlyPayment = (amount * (( i/100 )/12) );
     return monthlyPayment.toFixed(2);
 }
 
