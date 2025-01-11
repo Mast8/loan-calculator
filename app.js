@@ -19,13 +19,13 @@ clearBtn.addEventListener('click', clearInputAndResult);
 function showPaymentInfo(){
     let monthlyPayment = calcMonthlyPayment(loanAmount.value, interestRate.value, noOfMonth.value);
     numberPayments = noOfMonth.value * 12;
+    let total = numberPayments*monthlyPayment;
     //let yearPayment = calcYearPayment(loanAmount.value, interestRate.value, noOfMonth.value);
     paymentInfoList[0].innerHTML = `$${loanAmount.value.toLocaleString()}`;
     paymentInfoList[1] .innerHTML = `$${interestRate.value}%`;
     paymentInfoList[2].innerHTML = numberPayments;
     paymentInfoList[3].innerHTML = `$${parseFloat(monthlyPayment).toLocaleString()}`;
-    paymentInfoList[4].innerHTML = numberPayments*monthlyPayment;
-    //paymentInfoList[3].innerHTML = `$${parseFloat(yearPayment).toLocaleString()}`;
+    paymentInfoList[4].innerHTML = total.toFixed(2);
 
 
 }
