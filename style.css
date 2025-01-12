@@ -39,6 +39,7 @@ body{
 
 .calc-content h2,
 .result-content h2{
+    color: #062731;
     font-size: 1.4rem;
     font-weight: 600;
     text-align:  center;
