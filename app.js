@@ -7,16 +7,36 @@ const calcForm = document.getElementById('calc-form'),
       clearBtn = document.getElementById('clear-btn'),
       paymentInfoList = document.querySelectorAll('.payment-info div span');
 
+
+
+
+
 calcForm.addEventListener('submit', (e) => {
+    if(validate(loanAmount.value) && validate(noOfMonth.value) && validate(interestRate.value)){
+       
+        showPaymentInfo();
+    }
     e.preventDefault();
-    showPaymentInfo();
 });
+
+
 
 clearBtn.addEventListener('click', clearInputAndResult);
 
+function validate(input){
+    res = false;
+    if(input.trim() === "")
+      alert("Todo is blank");
+    else if(input.trim() == 0 ){
+      alert("Input is 0");
+    } else res = true;
+    return res;
+  }
 
 // show payment info
 function showPaymentInfo(){
+   
+
     let monthlyPayment = calcMonthlyPayment(loanAmount.value, interestRate.value, noOfMonth.value);
     numberPayments = noOfMonth.value * 12;
     let total = numberPayments*monthlyPayment;
