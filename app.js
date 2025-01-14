@@ -12,7 +12,8 @@ const calcForm = document.getElementById('calc-form'),
 
 
 calcForm.addEventListener('submit', (e) => {
-    if(validate(loanAmount.value) && validate(noOfMonth.value) && validate(interestRate.value)){
+    if(validate(loanAmount,"loan amount") && validate(interestRate, "interest") 
+        && validate(noOfMonth,"years")){
        
         showPaymentInfo();
     }
@@ -23,12 +24,14 @@ calcForm.addEventListener('submit', (e) => {
 
 clearBtn.addEventListener('click', clearInputAndResult);
 
-function validate(input){
+function validate(input,text){
+    inputValue = input.value;
     res = false;
-    if(input.trim() === "")
-      alert("Todo is blank");
-    else if(input.trim() == 0 ){
-      alert("Input is 0");
+    if(inputValue.trim() === "")
+
+      alert( text +" is blank");
+    else if(inputValue.trim() == 0 ){
+      alert(text +" is 0");
     } else res = true;
     return res;
   }
