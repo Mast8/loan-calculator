@@ -8,12 +8,13 @@ const calcForm = document.getElementById('calc-form'),
       paymentInfoList = document.querySelectorAll('.payment-info div span');
 
 
+let message = document.getElementById('message');
 
 
 
 calcForm.addEventListener('submit', (e) => {
-    if(validate(loanAmount,"loan amount") && validate(interestRate, "interest") 
-        && validate(noOfMonth,"years")){
+    if(validate(loanAmount,"Loan amount") && validate(interestRate, "Interest rate") 
+        && validate(noOfMonth,"Years")){
        
         showPaymentInfo();
     }
@@ -27,12 +28,16 @@ clearBtn.addEventListener('click', clearInputAndResult);
 function validate(input,text){
     inputValue = input.value;
     res = false;
-    if(inputValue.trim() === "")
 
-      alert( text +" is blank");
+    if(inputValue.trim() === "")
+      //alert( text +" is blank");
+      message.innerHTML = text +" is blank";
     else if(inputValue.trim() == 0 ){
-      alert(text +" is 0");
-    } else res = true;
+      //alert(text +" is 0");
+      message.innerHTML = text +" is 0";
+    } else {
+        message.innerHTML = "";
+        res = true;}
     return res;
   }
 

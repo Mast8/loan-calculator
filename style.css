@@ -158,6 +158,10 @@ body{
     font-size: 1.75rem;
 }
 
+.message {
+    color: red;
+}
+
 @media screen and (max-width: 992px){
     .payment-info{
         grid-template-columns: repeat(2, 1fr);
