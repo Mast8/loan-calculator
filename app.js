@@ -30,14 +30,15 @@ function validate(input,text){
     res = false;
 
     if(inputValue.trim() === "")
-      //alert( text +" is blank");
       message.innerHTML = text +" is blank";
     else if(inputValue.trim() == 0 ){
-      //alert(text +" is 0");
       message.innerHTML = text +" is 0";
-    } else {
-        message.innerHTML = "";
-        res = true;}
+    } else if(inputValue.trim() <= 0 )
+            message.innerHTML = text +" is Negative";
+        else{
+            message.innerHTML = "";
+            res = true;
+        }
     return res;
   }
 
