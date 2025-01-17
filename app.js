@@ -49,13 +49,15 @@ function showPaymentInfo(){
     let monthlyPayment = calcMonthlyPayment(loanAmount.value, interestRate.value, noOfMonth.value);
     numberPayments = noOfMonth.value * 12;
     let total = numberPayments*monthlyPayment;
-    paymentInfoList[0].innerHTML = `$${loanAmount.value.toLocaleString()}`;
+    paymentInfoList[0].innerHTML = thousandformat(loanAmount.value);
     paymentInfoList[1] .innerHTML = `${interestRate.value}%`;
     paymentInfoList[2].innerHTML = numberPayments;
-    paymentInfoList[3].innerHTML = `$${parseFloat(monthlyPayment).toLocaleString()}`;
-    paymentInfoList[4].innerHTML = total.toFixed(2);
+    paymentInfoList[3].innerHTML = thousandformat(monthlyPayment);
+    paymentInfoList[4].innerHTML = thousandformat(total);
+}
 
-
+function thousandformat(amount){
+    return parseFloat(amount).toLocaleString();
 }
 
 function calcMonthlyPayment(amount, i, months){
